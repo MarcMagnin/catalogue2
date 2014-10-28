@@ -1,0 +1,11 @@
+﻿.transparentInput {
+    
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: black !important;
+    margin: 3px !important;
+}
+.transparentInput:focus {
+    background: rgba(255, 255, 255, 0.50) !important;
+}   

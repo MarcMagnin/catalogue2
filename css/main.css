@@ -1,0 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
+
+.tags {
+    margin: 10px 0;
+}
+.tags .tag {
+    border-radius: 6px;
+    background-color: #EFEFEF;
+    border: 1px solid #DDD;
+    padding: 5px;
+    margin-right: 10px;
+}
+.tags .tag:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+html, body { 
+    background: rgb(65, 65, 65);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+}

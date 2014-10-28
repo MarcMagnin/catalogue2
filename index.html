@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalogue illustrateur</title>
+    <!--<script src="jquery-1.7.1.min.js"></script>-->
+    <script src="js/jquery-1.9.1.js"></script>
+    
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    
+    <script src="isotope.pkgd.min.js"></script>
+    <script src="js/fitColumns.js"></script>
+        <script src="js/FileAPI.js"></script>
+        <script src="js/angular-file-upload-html5-shim.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script src="js/angular-file-upload.js"></script>
+        <script src="js/ui-bootstrap-tpls-0.10.0.js"></script>
+   <!-- <script src="js/jquery.masonry.min.js"></script>-->
+    <!--<script src="js/masonry.pkgd.min.js"></script>
+    <script src="angular-masonry-master/angular-masonry-master/src/angular-masonry.js"></script>
+    -->
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+	<!--<link rel="stylesheet" href="css/bootstrap-responsive.min.css">-->
+    <link href="css/Tiles.css" rel="stylesheet" />
+    <!--<link href="css/masonry.css" rel="stylesheet" />-->
+    <link href="css/input.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/main.css">
+    
+
+	<script type="text/javascript" src="js/catalogue-app/app.js"></script>
+	<script type="text/javascript" src="js/catalogue-app/controllers/mainController.js"></script>
+    <script src="js/catalogue-app/tools/onBlurDirective.js"></script>
+ 
+    
+	<script>
+	    $(document).ready(function() {
+	        $('#container').isotope({
+	            // options
+	            itemSelector: '.tile',
+	            layoutMode: 'masonry',
+	        });
+	        $('#container2').isotope({
+	            // options
+	            itemSelector: '.tile',
+	            layoutMode: 'masonry',
+	        });
+	    });
+	</script>
+</head>
+    <body ng-app="CatalogueApp" ng-controller="mainController" ng-init="init()">
+        
+        <div class="navbar-form drop-box"
+             ng-file-drop="onFileSelect($files)"
+             ng-file-drop-available="true">
+            <div class="pull-right">
+                
+                <input type="text" 
+                       ng-model="searchWord"  
+                       placeholder="Recherche"
+                       typeahead="val.Name for val in getSearchSuggestions($viewValue) | filter:$viewValue"
+                       typeahead-loading="loadingSearchSuggestions"
+                       class="form-control">
+                    
+                </input>
+                <i ng-show="loading" class="glyphicon glyphicon-refresh"></i>
+
+                <button class="btn" type="submit" ng-click="search()">Ok</button>
+            </div>
+  
+        </div>
+
+    <br/>
+    <br/>
+        
+        
+         <!--masonry="true" -->
+    <div id="container" >
+            <div class="tile drop-box" ng-repeat="illustrateur in illustrateurs" ng-click="enableEdition(illustrateur)"
+                 ng-file-drop="addFileToIllustrateur($files, illustrateur, $index)"
+                 ng-file-drop-available="true"
+                >
+           <!--     <eased-input value="myValue" ng-model="illustrateur.Nom"  timeout="500" placeholder="Saisissez un nom..." change="updateIllustrateur(illustrateur)" />-->
+                <input class="transparentInput" type="text" placeholder="Saisissez un nom..." 
+                       ng-model="illustrateur.Nom" 
+                       ng-change="updateIllustrateur(illustrateur)" 
+                    />
+                <!--onkeypress="validate(illustrateur)" -->
+                <a class="pull-right"
+                   ng-click="deleteIllustrateur($index, illustrateur)"
+                   ng-show="illustrateur.editing">
+                    X
+                </a>
+                <div id="container2">
+                    <div class="tile" ng-repeat="illustration in illustrateur.Illustrations">
+                        <img src="http://localhost:8081/databases/Illustrateurs/{{illustration.Url}}"/>            
+                        <a class="pull-right"
+                           ng-click="deleteIllustration($index, illustrateur)"
+                           ng-show="illustrateur.editing">
+                            X
+                        </a>
+                        <tag-illustration  ng-show="illustrateur.editing" illustration="illustration" illustrateur="illustrateur"></tag-illustration>
+                    </div>
+                    </div>
+            </div>
+
+<!--                <div  class="drop-box"
+                      ng-file-drop="addFileToIllustrateur($files, {{illustrateur}})"
+                      ng-file-drop-available="true">
+                    <h2>{{illustrateur.Nom}}</h2>
+                    <input type="text" placeholder="Saisissez un nom..." ng-model="illustrateur.Nom"./>
+                    <a class="btn" ng-click="deleteIllustrateur($index, illustrateur)">Supprimer</a>
+                    <tag-manager illustrateur="illustrateur"></tag-manager>
+                    <div class="genre" 
+                         ng-repeat="illustration in illustrateur.Illustrations">
+                        <div class="span6"> 
+                            <img class="illustration" src="http://wreack:8081/databases/Illustrateurs/{{illustration.Url}}"/>            
+                            <tag-illustration illustration="illustration" illustrateur="illustrateur"></tag-illustration>                        
+                        </div>
+                    </div>
+                             
+                </div>
+            -->            
+            </div>
+    </body>
+</html>

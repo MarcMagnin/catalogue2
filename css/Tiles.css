@@ -1,0 +1,51 @@
+﻿.drop-box {
+    background: rgba(255, 255, 255, 0.20);
+  
+    
+     transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;  
+}
+
+.drop-box.dragover {
+    background: rgba(100, 255, 100, 0.50);
+}
+
+
+.tile {
+    float: left;
+    overflow: hidden;
+    border:5px white; 
+    margin:5px;
+    padding: 5px;
+    background: #ffffff;
+    background: rgba(255, 255, 255, 0.20);
+    transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;    
+
+}
+
+.tile.dragover {
+    background: rgba(100, 255, 100, 0.50);
+}
+.tile:hover {
+    background: rgba(255, 255, 255, 0.50);
+}
+.tile img{
+    max-width: 400px;
+}
+
+.tileTitle {
+
+      font-size: 20px;
+    font-family: ArcherLight, Helvetica, Arial, sans-serif;
+
+
+    transition: all .2s ease-out .2s;
+    -o-transition: all .2s ease-out .2s;
+    -moz-transition: all .2s ease-out .2s;
+    -webkit-transition: all .2s ease-out .2s;
+}
