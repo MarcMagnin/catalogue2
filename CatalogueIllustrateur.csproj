@@ -201,12 +201,24 @@
     <Content Include="isotope\_posts\docs\2011-06-16-hash-history-jquery-bbq.mdown" />
     <Content Include="isotope\_posts\docs\2011-12-11-help.mdown" />
     <Content Include="isotope\_posts\docs\2011-12-20-license.mdown" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\Auto%252fIllustrateur%252fByIllustrations_TagsAndNom.index" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\Auto%252fIllustrateur%252fByIllustrations_TagsAndNomAndPrenomAndTags.index" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\Auto%252fIllustrateur%252fByLastModifiedAndNom.index" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\Auto%252fIllustrateur%252fByNom.index" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\GetFirstIllustration.transform" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\GetIllustrations.transform" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\Raven%252fDocumentsByEntityName.index" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\SearchSuggestions.index" />
+    <Content Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\Tags.index" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RavenDB\Server\Database\Databases\Illustrateurs\IndexDefinitions\temp\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

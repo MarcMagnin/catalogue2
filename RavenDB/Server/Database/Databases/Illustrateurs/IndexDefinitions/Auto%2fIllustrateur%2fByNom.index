@@ -1,0 +1,29 @@
+{
+  "Name": "Auto/Illustrateur/ByNom",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.Illustrateur\r\nlet LastModified = doc[\"@metadata\"][\"Last-Modified\"]\r\nselect new { Nom = doc.Nom, LastModified}",
+  "Maps": [
+    "from doc in docs.Illustrateur\r\nlet LastModified = doc[\"@metadata\"][\"Last-Modified\"]\r\nselect new { Nom = doc.Nom, LastModified}"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [
+    "Nom",
+    "Illustrations",
+    "__document_id",
+    "LastModified"
+  ],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "InternalFieldsMapping": {
+    "Nom": "Nom"
+  },
+  "Type": "Auto"
+}

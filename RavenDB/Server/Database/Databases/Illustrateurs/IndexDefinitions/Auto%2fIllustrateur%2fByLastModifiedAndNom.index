@@ -1,0 +1,25 @@
+{
+  "Name": "Auto/Illustrateur/ByLastModifiedAndNom",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.Illustrateur\r\nselect new { LastModified = doc.LastModified, Nom = doc.Nom }",
+  "Maps": [
+    "from doc in docs.Illustrateur\r\nselect new { LastModified = doc.LastModified, Nom = doc.Nom }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "InternalFieldsMapping": {
+    "LastModified": "LastModified",
+    "Nom": "Nom"
+  },
+  "Type": "Auto"
+}

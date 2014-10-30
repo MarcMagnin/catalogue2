@@ -1,0 +1,25 @@
+{
+  "Name": "Auto/Illustrateur/ByIllustrations_TagsAndNom",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.Illustrateur\r\nfrom docIllustrationsItem in ((IEnumerable<dynamic>)doc.Illustrations).DefaultIfEmpty()\r\nselect new { Illustrations_Tags = docIllustrationsItem.Tags, Nom = doc.Nom }",
+  "Maps": [
+    "from doc in docs.Illustrateur\r\nfrom docIllustrationsItem in ((IEnumerable<dynamic>)doc.Illustrations).DefaultIfEmpty()\r\nselect new { Illustrations_Tags = docIllustrationsItem.Tags, Nom = doc.Nom }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "InternalFieldsMapping": {
+    "Illustrations_Tags": "Illustrations,Tags",
+    "Nom": "Nom"
+  },
+  "Type": "Auto"
+}

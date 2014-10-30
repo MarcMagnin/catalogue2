@@ -1,0 +1,39 @@
+{
+  "Name": "Auto/Illustrateur/ByIllustrations_TagsAndNomAndPrenomAndTags",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.Illustrateur\r\nfrom docIllustrationsItem in ((IEnumerable<dynamic>)doc.Illustrations).DefaultIfEmpty()\r\nlet LastModified = doc[\"@metadata\"][\"Last-Modified\"]\r\nselect new { Illustrations_Tags = docIllustrationsItem.Tags, Prenom = doc.Prenom, Tags = doc.Tags, Nom = doc.Nom, LastModified}",
+  "Maps": [
+    "from doc in docs.Illustrateur\r\nfrom docIllustrationsItem in ((IEnumerable<dynamic>)doc.Illustrations).DefaultIfEmpty()\r\nlet LastModified = doc[\"@metadata\"][\"Last-Modified\"]\r\nselect new { Illustrations_Tags = docIllustrationsItem.Tags, Prenom = doc.Prenom, Tags = doc.Tags, Nom = doc.Nom, LastModified}"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {
+    "Nom": "Analyzed",
+    "Prenom": "Analyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {
+    "Nom": "Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net",
+    "Prenom": "Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"
+  },
+  "Fields": [
+    "Illustrations_Tags",
+    "Prenom",
+    "Tags",
+    "Nom",
+    "__document_id"
+  ],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "InternalFieldsMapping": {
+    "Illustrations_Tags": "Illustrations,Tags",
+    "Prenom": "Prenom",
+    "Tags": "Tags",
+    "Nom": "Nom"
+  },
+  "Type": "Auto"
+}

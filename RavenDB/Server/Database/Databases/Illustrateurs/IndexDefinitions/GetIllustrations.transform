@@ -1,0 +1,4 @@
+{
+  "TransformResults": "from result in results\r\nselect new { result.Id, result.Nom, result.Tag, Illustrations = result.Illustrations}",
+  "Name": "GetIllustrations"
+}

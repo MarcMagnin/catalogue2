@@ -1,0 +1,31 @@
+{
+  "Name": "SearchSuggestions",
+  "LockMode": "Unlock",
+  "Map": "from illustrateur in docs.Illustrateur\r\nfrom tagsIllustrateur in illustrateur.Tags\r\nselect new { Name = tagsIllustrateur.ToString().ToLower(), Count = 1 };",
+  "Maps": [
+    "from illustrateur in docs.Illustrateur\r\nfrom tagsIllustrateur in illustrateur.Tags\r\nselect new { Name = tagsIllustrateur.ToString().ToLower(), Count = 1 };",
+    "from illustrateur in docs.Illustrateur\r\nfrom illustration in illustrateur.Illustrations\r\nfrom tags in illustration.Tags\r\nselect new { Name = tags.ToString().ToLower(), Count = 1 };",
+    "from illustrateur in docs.Illustrateur\r\nselect new { Name = illustrateur.Nom.ToString().ToLower(), Count = 1 };"
+  ],
+  "Reduce": "from tagCount in results\r\ngroup tagCount by tagCount.Name\r\ninto g\r\nselect new {Name = g.Key, Count = g.Sum(x => x.Count) };",
+  "TransformResults": null,
+  "IsMapReduce": true,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {
+    "Name": "Analyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {
+    "Name": "Lucene.Net.Analysis.Standard.StandardAnalyzer, Lucene.Net"
+  },
+  "Fields": [
+    "Name",
+    "Count"
+  ],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "InternalFieldsMapping": null,
+  "Type": "MapReduce"
+}
