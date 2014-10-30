@@ -154,3 +154,12 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+/RavenDB/Bundles
+/RavenDB/Client
+/RavenDB/EmbeddedClient
+/RavenDB/Samples
+/RavenDB/Server
+/RavenDB/Silverlight
+/RavenDB/Smuggler
+/RavenDB/Web
+/RavenDB
